@@ -6,21 +6,10 @@ import javax.swing.JOptionPane;
 
 public class Carrinho {
     // Lista de produtos selecionados
-    // Heber isso ta uma bgunça mesmo nao é ilusao, nao to sabendo percorrer os
-    // elementos lidos la em produtos aqui nesa class
     static List<HashMap<String, Double>> produtosSelecionados = new ArrayList<>();
 
     public static void selecionarProdutos() {
         String elementoSelecionado;
-        do {
-            elementoSelecionado = JOptionPane.showInputDialog(null, "Selecione um produto pelo índice (0 para sair): ");
-            if (elementoSelecionado != null && !elementoSelecionado.equals("")) {
-                int indice = Integer.parseInt(elementoSelecionado);
-
-                if (indice < 0 || indice > Produtos.listaDeProdutos.size()) {
-                    JOptionPane.showMessageDialog(null, "Índice inválido.");
-                    continue;
-                }
 
                 HashMap<String, Double> produtoSelecionado = Produtos.listaDeProdutos.get(indice);
                 for (HashMap.Entry<String, Double> entry : produtoSelecionado.entrySet()) {
