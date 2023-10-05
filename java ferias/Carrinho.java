@@ -8,16 +8,15 @@ public class Carrinho {
     // Lista de produtos selecionados
     static List<HashMap<String, Double>> produtosSelecionados = new ArrayList<>();
 
-    public static void selecionarProdutos() {
+        public static void selecionarProdutos() {
         String elementoSelecionado;
-
-                HashMap<String, Double> produtoSelecionado = Produtos.listaDeProdutos.get(indice);
-                for (HashMap.Entry<String, Double> entry : produtoSelecionado.entrySet()) {
-                    String nomeProduto = entry.getKey();
-                    Double precoProduto = entry.getValue();
-                    adicionarProduto(nomeProduto, precoProduto); // Aqui, estamos passando o nome e o preço do produto.
-                    JOptionPane.showMessageDialog(null, "Produto adicionado ao carrinho: " + nomeProduto);
-                }
+        do{
+            HashMap<String, Double> produtoSelecionado = Produtos.listaDeProdutos.get(indice);
+            for (HashMap.Entry<String, Double> entry : produtoSelecionado.entrySet()) {
+                String nomeProduto = entry.getKey();
+                Double precoProduto = entry.getValue();
+                adicionarProduto(nomeProduto, precoProduto); // Aqui, estamos passando o nome e o preço do produto.
+                JOptionPane.showMessageDialog(null, "Produto adicionado ao carrinho: " + nomeProduto);
             }
         } while (elementoSelecionado != null && !elementoSelecionado.equals("0"));
     }
