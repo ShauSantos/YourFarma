@@ -1,0 +1,41 @@
+
+import java.io.*;
+
+
+public class SalvarArquivos {
+    static File arquivo = new File("dadosCadastrados.csv");
+
+    public static void dadosCadastro() {
+        try{
+        arquivo.createNewFile();
+        }catch(Exception ex){
+            System.out.println("O arquivo não foi criado, talvez ele já exista");
+        }
+
+     try (FileWriter fileWriter = new FileWriter(arquivo)) {
+        fileWriter.write("\n");
+        fileWriter.write("\n");
+        fileWriter.write("\n");
+        fileWriter.write("\n");
+        fileWriter.write("\n");
+        fileWriter.write("\n");
+        fileWriter.close();
+          
+    } catch(Exception excecao){
+        System.out.println("arqv não criado");
+      return;
+    }
+    try{
+        BufferedReader Bf= new BufferedReader(new FileReader("dadosCadastrados.csv"));
+        String leitura;
+        while((leitura=Bf.readLine()) !=null){
+        }
+        Bf.close();
+     
+    }catch(Exception exs){
+     System.out.println("os dados não foram lidos");
+     return;
+    }
+ 
+    }
+}
